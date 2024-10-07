@@ -44,18 +44,17 @@ class Fish extends Animal {
 }
 
 class Farm {
-    private List<Animal> Animals;
+    Animal[] animals = new Animal[100];
+    int animalsNums = 0;
+    
 
-    public Farm(List<Animal> animals) {
-        Animals = animals;
-    }
-
-    public void addAnimal(Animal animal) {
-        Animals.add(animal);
+    public void addAnimal(Animal newAnimal) {
+        animals[animalsNums] = newAnimal;
+        animalsNums++;
     }
 
     public void printAnimals() {
-        for (Animal animal : Animals) {
+        for (Animal animal : animals) {
             if (animal.isCanSwim() || animal.isCanWalk()) {
                 System.out.println(animal.getName() + " ");
             }
